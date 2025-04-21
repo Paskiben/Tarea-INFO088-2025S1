@@ -1,3 +1,6 @@
+# Phony targets
+.PHONY: all clean
+
 # Definir compilador y flags
 CXX = g++
 CXXFLAGS = -std=c++23 -Ofast -Wall -Wextra -Wconversion -Wdouble-promotion -Wduplicated-cond -Wfatal-errors -Wfloat-equal -Wformat=2 -Wlogical-op -Wpedantic -Wshadow -Wundef -Wno-unused-parameter -I$(INC_DIR) #-g3 for GNU debugger
@@ -9,14 +12,14 @@ OUT_DIR = out
 BIN_DIR = bin
 
 # Archivos fuente
-SOURCES = $(SRC_DIR)/solucion1.cpp $(SRC_DIR)/solucion2.cpp $(SRC_DIR)/experimentacion.cpp
 MAIN = $(SRC_DIR)/main.cpp
+SOURCES = $(SRC_DIR)/vector.cpp $(SRC_DIR)/experimentacion.cpp
 
 # Archivos objeto
-OBJECTS = $(OUT_DIR)/solucion1.o $(OUT_DIR)/solucion2.o $(OUT_DIR)/experimentacion.o
+OBJECTS = $(OUT_DIR)/vector.o $(OUT_DIR)/experimentacion.o
 
 # Ejecutable
-EXECUTABLE = $(BIN_DIR)/programa
+EXECUTABLE = $(BIN_DIR)/file_experiments
 
 # Regla por defecto: compilar el ejecutable
 all: $(EXECUTABLE)
@@ -41,5 +44,3 @@ $(OUT_DIR):
 clean:
 	rm -rf $(OUT_DIR) $(BIN_DIR)
 
-# Phony targets
-.PHONY: all clean
