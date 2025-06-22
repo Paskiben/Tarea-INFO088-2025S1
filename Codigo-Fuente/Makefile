@@ -2,8 +2,8 @@
 .PHONY: all clean
 
 # Definir compilador y flags
-CXX = g++
-CXXFLAGS = -std=c++23 -Ofast -Wall -Wextra -Wconversion -Wdouble-promotion -Wduplicated-cond -Wfatal-errors -Wfloat-equal -Wformat=2 -Wlogical-op -Wpedantic -Wshadow -Wundef -Wno-unused-parameter -I$(INC_DIR) #-g3 for GNU debugger
+CXX=g++
+CXXFLAGS=-std=c++23 -O3 -ffast-math -Wall -Wextra -Wconversion -Wdouble-promotion -Wduplicated-cond -Wfatal-errors -Wfloat-equal -Wformat=2 -Wlogical-op -Wpedantic -Wshadow -Wundef -Wno-unused-parameter -Wno-unused-result -I$(INC_DIR) #-g3 for GNU debugger
 
 # Directorios
 SRC_DIR = src
@@ -13,10 +13,10 @@ BIN_DIR = bin
 
 # Archivos fuente
 MAIN = $(SRC_DIR)/main.cpp
-SOURCES = $(SRC_DIR)/vector.cpp $(SRC_DIR)/experimentacion.cpp
+SOURCES = $(SRC_DIR)/tree.cpp $(SRC_DIR)/experimentacion.cpp
 
 # Archivos objeto
-OBJECTS = $(OUT_DIR)/vector.o $(OUT_DIR)/experimentacion.o
+OBJECTS = $(OUT_DIR)/tree.o $(OUT_DIR)/experimentacion.o
 
 # Ejecutable
 EXECUTABLE = $(BIN_DIR)/file_experiments
@@ -42,5 +42,5 @@ $(OUT_DIR):
 
 # Limpiar los archivos generados
 clean:
+	@echo " [CLN] Removing binary files"
 	rm -rf $(OUT_DIR) $(BIN_DIR)
-
