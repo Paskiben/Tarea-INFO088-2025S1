@@ -13,10 +13,10 @@ BIN_DIR = bin
 
 # Archivos fuente
 MAIN = $(SRC_DIR)/main.cpp
-SOURCES = $(SRC_DIR)/tree.cpp $(SRC_DIR)/experimentacion.cpp
+SOURCES = $(SRC_DIR)/dns.cpp $(SRC_DIR)/experimentacion.cpp
 
 # Archivos objeto
-OBJECTS = $(OUT_DIR)/tree.o $(OUT_DIR)/experimentacion.o
+OBJECTS = $(OUT_DIR)/dns.o $(OUT_DIR)/experimentacion.o
 
 # Ejecutable
 EXECUTABLE = $(BIN_DIR)/file_experiments
